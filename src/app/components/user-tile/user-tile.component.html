@@ -1,0 +1,15 @@
+<div class="ui link cards">
+  <div class="card" *ngFor="let u of Users">
+    <div class="content" (click)="navToUserDetail(u.id)">
+      <div class="header">{{u.name}}</div>
+      <div class="meta">
+        <i class="internet explorer icon"></i> {{u.website}}
+      </div>
+      <div class="description">
+        <i class="mail icon"></i> {{u.email}}
+        <br/>
+        <i class="call icon"></i>{{u.phone}}
+      </div>
+    </div>
+  </div>
+</div>

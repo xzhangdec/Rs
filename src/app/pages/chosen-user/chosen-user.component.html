@@ -1,0 +1,40 @@
+
+<div class="user-detail">
+  <div class="back">
+    <i class="arrow circle left icon"  style="cursor:pointer" (click)="backToUserList()"></i>
+  </div>
+  <div class="header clearfix">
+    <h2 class="name">{{selectedUser.name}}</h2>
+  </div>
+  <div class="profile">
+    <img class="avatar"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWQlEJLSCnHKoJZJhoiciw4YRoazrkKrh-IpRLwo2L4bOcUnoEUg"/>
+    <ul class="basicInfo">
+      <li class="info">
+        <span class="title">UserName  <br></span><span class="infoContent">{{selectedUser.username}}</span>
+      </li>
+      <li class="info">
+        <span class="title">Web  <br></span><span class="infoContent">{{selectedUser.website}}</span>
+      </li>
+      <li class="info">
+        <span class="title">Email  <br/></span><span class="infoContent">{{selectedUser.email}}</span>
+      </li>
+      <li class="info">
+        <span class="title">Phone  <br/></span><span class="infoContent">{{selectedUser.phone}}</span>
+      </li>
+      <li class="info">
+        <span class="title">Address <br></span><span class="infoContent">{{selectedUser.address["street"] || "unknow"}}, {{selectedUser.address.suite}}, {{selectedUser.address.city}}, {{selectedUser.address.zipcode}} <br/> Lat: {{selectedUser.address.geo.lat|| "unknow"}}, Lng: {{selectedUser.address.geo.lng}}
+        </span>
+      </li>
+
+
+      <li class="info">
+        <span class="title">Company <br></span>
+        <span class="subTitle">Name </span><span class="subinfoContent">{{selectedUser.company.name}}</span><br/>
+        <span class="subTitle">catchPhrase: </span><span class="subinfoContent">{{selectedUser.company.catchPhrase}}</span><br/>
+        <span class="subTitle">bs </span><span class="subinfoContent">{{selectedUser.company.bs}}</span>
+
+      </li>
+
+    </ul>
+  </div>
+</div>
