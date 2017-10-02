@@ -142,7 +142,6 @@ describe('UserTileComponent', () => {
   });
 
   it('should navigate to detail page for user based on selected user id', () => {
-
     userTileComponet.navToUserDetail(MockUser.id);
     expect(router.navigate).toHaveBeenCalledWith([ '/user', MockUser.id ], Object({ queryParams: Object({ id: MockUser.id }) }));
 

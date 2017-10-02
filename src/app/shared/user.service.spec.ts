@@ -79,7 +79,7 @@ describe('UserService', () => {
     });
   }
 
-  it("Retrieve all users", inject([UserService, MockBackend], fakeAsync((svc, backend) => {
+  it("should retrieve all users", inject([UserService, MockBackend], fakeAsync((svc, backend) => {
     let res;
     targettURL(backend, 'https://jsonplaceholder.typicode.com/users');
     svc.getUsersJSON().subscribe(users => {
@@ -91,7 +91,7 @@ describe('UserService', () => {
     }))
   );
 
-  it("Retrieve user by Id", inject([UserService, MockBackend], fakeAsync((svc, backend) => {
+  it("should retrieve user by Id", inject([UserService, MockBackend], fakeAsync((svc, backend) => {
     targettURL(backend, 'https://jsonplaceholder.typicode.com/users');
     svc.getUserById(MockUser.id).subscribe(user => {
       expect(user).toEqual(MockUser);

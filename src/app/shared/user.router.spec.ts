@@ -62,7 +62,7 @@ describe('Router tests', () => {
     router = _router;
   }));
 
-  it('default route redirects to home (fakeAsync/tick)', fakeAsync(() => {
+  it('default route redirects to user', fakeAsync(() => {
     let fixture = TestBed.createComponent(RootComponent);
     router.initialNavigation();
     fixture.detectChanges();
@@ -71,7 +71,7 @@ describe('Router tests', () => {
   }));
 
 
-  it('can navigate to home (fakeAsync/tick)', fakeAsync(() => {
+  it('can navigate to user', fakeAsync(() => {
     let fixture = TestBed.createComponent(RootComponent);
     router.navigate(['/user']);
     fixture.detectChanges();
@@ -87,7 +87,7 @@ describe('Router tests', () => {
     expect(location.pathname.endsWith('/user/5')).toBe(true);
   }));
 
-  it('should redirect unexisting urls to Home (fakeAsync/tick)', fakeAsync(() => {
+  it('should redirect unexisting urls to user', fakeAsync(() => {
     let fixture = TestBed.createComponent(RootComponent);
     router.navigate(['/undefined/route']);
     fixture.detectChanges();

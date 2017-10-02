@@ -20,7 +20,7 @@ let service: UserService;
 
 let expectedApplicationId = '1';
 
-describe('AppComponent', () => {
+describe('ChosenUserComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ChosenUserComponent],
