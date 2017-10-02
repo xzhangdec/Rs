@@ -102,29 +102,29 @@ describe('UserTileComponent', () => {
       });
   }));
 
-  describe("Functionalities", () => {
-    it('should call getUsers and set users to the returned object', (done) => {
-      spyOn(userService, 'getUsersJSON').and.callFake(() => {
-        return Observable.of(MockUsersArray);
-      });
 
-      userTileComponet.getUsers().subscribe(() => {
-        expect(userService.getUsersJSON).toHaveBeenCalled();
-        expect(userService.getUsersJSON).toHaveBeenCalledTimes(1);
-        expect(userTileComponet.Users).toBe(MockUsersArray);
-        done();
-      });
+  it('should call getUsers and set users to the returned object', (done) => {
+    spyOn(userService, 'getUsersJSON').and.callFake(() => {
+      return Observable.of(MockUsersArray);
     });
 
-    it('should initialize and call getUsers', () => {
-      spyOn(userTileComponet, 'getUsers').and.returnValue({ subscribe: () => {} });
-
-      userTileComponet.ngOnInit();
-
-      expect(userTileComponet.getUsers).toHaveBeenCalled();
-      expect(userTileComponet.getUsers).toHaveBeenCalledTimes(1);
+    userTileComponet.getUsers().subscribe(() => {
+      expect(userService.getUsersJSON).toHaveBeenCalled();
+      expect(userService.getUsersJSON).toHaveBeenCalledTimes(1);
+      expect(userTileComponet.Users).toBe(MockUsersArray);
+      done();
     });
   });
+
+  it('should initialize and call getUsers', () => {
+    spyOn(userTileComponet, 'getUsers').and.returnValue({ subscribe: () => {} });
+
+    userTileComponet.ngOnInit();
+
+    expect(userTileComponet.getUsers).toHaveBeenCalled();
+    expect(userTileComponet.getUsers).toHaveBeenCalledTimes(1);
+  });
+
 
   it('should call navToUserDetail() after click', () => {
     spyOn(userTileComponet, 'navToUserDetail');

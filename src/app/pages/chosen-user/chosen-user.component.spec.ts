@@ -1,12 +1,6 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import {
-  async,
-  fakeAsync,
-  ComponentFixture,
-  TestBed,
-  tick,
-  inject
-} from '@angular/core/testing';
+  async, fakeAsync, ComponentFixture, TestBed, tick, inject } from '@angular/core/testing';
 import {
   RouterTestingModule
 } from '@angular/router/testing';
@@ -14,20 +8,17 @@ import {
   HttpModule
 } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
-// Components
 import { ChosenUserComponent } from './chosen-user.component';
 
-// Service
 import { UserService } from '../../shared/user.service';
-//import { AppServiceStub } from './app.service.stub';
 
-let comp:    ChosenUserComponent;
+let chosenUserComponent: ChosenUserComponent;
 let fixture: ComponentFixture<ChosenUserComponent>;
 let service: UserService;
 
-let expectedApplicationId = 'abc123';
+let expectedApplicationId = '1';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -54,43 +45,26 @@ describe('AppComponent', () => {
 function tests() {
   beforeEach(() => {
     fixture = TestBed.createComponent(ChosenUserComponent);
-    comp = fixture.componentInstance;
+    chosenUserComponent = fixture.componentInstance;
 
     service = TestBed.get(UserService);
   });
 
-
-  /*
-   *   COMPONENT BEFORE INIT
-   */
-  it(`should be initialized`, () => {
+  it('should be initialized', () => {
     expect(fixture).toBeDefined();
-    expect(comp).toBeDefined();
+    expect(chosenUserComponent).toBeDefined();
   });
 
 
-  /*
-   *   COMPONENT INIT
-   */
-
-  it(`should retrieve param id from ActivatedRoute`, async(() => {
+  it('should retrieve param id from ActivatedRoute', async(() => {
     fixture.detectChanges();
-
-    expect(comp.applicationId).toEqual(expectedApplicationId);
-  }));
-/*
-  it(`should get the details after ngOnInit`, async(() => {
-    spyOn(comp, 'getDetails');
-    fixture.detectChanges();
-
-    expect(comp.getDetails).toHaveBeenCalled();
+    expect(chosenUserComponent.applicationId).toEqual(expectedApplicationId);
   }));
 
-  it(`should get the list after ngOnInit`, async(() => {
-    spyOn(comp, 'getList');
+  it('should back to user list page after click backToUserList()', async(() => {
+    spyOn(chosenUserComponent, 'backToUserList');
     fixture.detectChanges();
-
-    expect(comp.getList).toHaveBeenCalled();
+    expect(chosenUserComponent.backToUserList).toHaveBeenCalled();
   }));
-  */
+
 }
