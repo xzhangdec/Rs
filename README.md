@@ -21,21 +21,21 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 √=>***Passed*** 
 x => ***Rejected*** 
 #### **UserService**
-1.should retrieve all users     √
-2.should retrieve user by Id   √
+	1.should retrieve all users     √
+	2.should retrieve user by Id   √
 #### **User.Route**
-1.default route redirects to user  √
-2.can navigate to user  √
-3.should navigate to choseuser  √
-4.should redirect unexisting urls to user  √
+	1.default route redirects to user  √
+	2.can navigate to user  √
+	3.should navigate to choseuser  √
+	4.should redirect unexisting urls to user  √
 #### **UserTile(User-List-Part)**
-1.should call getUsers and set users to the returned object  √
-2.should initialize and call getUsers  √
-3.should call navToUserDetail() after click  √
+	1.should call getUsers and set users to the returned object  √
+	2.should initialize and call getUsers  √
+	3.should call navToUserDetail() after click  √
 #### **ChoseUser(User-Detail-Part)**
-1.should be initialized  √
-2.should retrieve param id from ActivatedRoute     x(***Rejected***)
-3.should back to user list page after click backToUserList() x(***Rejected***)
+	1.should be initialized  √
+	2.should retrieve param id from ActivatedRoute     x(***Rejected***)
+	3.should back to user list page after click backToUserList() x(***Rejected***)
 
 #### ***Reason for Rejected:***
 	Error => "Uncaught NetworkError: Failed to execute 'send' on 'XMLHttpRequest': Failed to load 'ng:///DynamicTestModule/HomeContentComponent.ngfactory.js'"
